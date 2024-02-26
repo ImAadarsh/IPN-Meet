@@ -120,51 +120,53 @@
                         </div>
                         <div class="auth-form card">
                             <div class="card-body">
-                                <form class="navbar-form navbar-right" id="meeting_form">
-                                    <div class="form-group">
-                                        <input type="text" aria-placeholder="Your Name" name="display_name" id="display_name" value="" maxLength="100"
-                                            placeholder="Name" class="form-control" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="meeting_number" id="meeting_number" value="" maxLength="200"
-                                            style="width:150px" placeholder="Meeting Number" class="form-control" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="meeting_pwd" id="meeting_pwd" value="" style="width:150px"
-                                            maxLength="32" placeholder="Meeting Password" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" required name="meeting_email" id="meeting_email" value="" style="width:150px"
-                                            maxLength="32" placeholder="Email option" class="form-control">
-                                    </div>
-                
-                                    <div class="form-group">
-                                        <select id="meeting_role" class="sdk-select">
-                                            <option  value=0>Attendee</option>
-                                            <option value=1>Host</option>
-                                            <option  value=0>AAA</option>
-                                        </select>
-                                    </div>
-                                    <div  class="form-group">
-                                        <select hidden id="meeting_china" class="sdk-select">
-                                            <option selected value=0>Global</option>
-                                            <option value=1>China</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <select hidden id="meeting_lang" class="sdk-select">
-                                            <option selected value="en-US">English</option>
-                                        </select>
-                                    </div>
-                
-                                    <input type="hidden" value="" id="copy_link_value" />
-                                    <button type="submit" class="btn btn-primary" id="join_meeting">Join</button>
-                                    <button type="submit" class="btn btn-primary" id="clear_all">Clear</button>
-                                    <button type="button" link="" onclick="window.copyJoinLink('#copy_join_link')"
-                                        class="btn btn-primary" id="copy_join_link">Copy Direct join link</button>
-                
-                
-                                </form>
+                                <div id="navbar" class="websdktest">
+                                    <form class="navbar-form navbar-right" id="meeting_form">
+                                        <div class="form-group">
+                                            <input type="text" aria-placeholder="Your Name" name="display_name" id="display_name" value="" maxLength="100"
+                                                placeholder="Name" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="meeting_number" id="meeting_number" value="" maxLength="200"
+                                                style="width:150px" placeholder="Meeting Number" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="meeting_pwd" id="meeting_pwd" value="" style="width:150px"
+                                                maxLength="32" placeholder="Meeting Password" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" required name="meeting_email" id="meeting_email" value="" style="width:150px"
+                                                maxLength="32" placeholder="Email option" class="form-control">
+                                        </div>
+                    
+                                        <div class="form-group">
+                                            <select id="meeting_role" class="sdk-select">
+                                                <option  value=0>Attendee</option>
+                                                <option value=1>Host</option>
+                                                <option  value=0>AAA</option>
+                                            </select>
+                                        </div>
+                                        <div  class="form-group">
+                                            <select hidden id="meeting_china" class="sdk-select">
+                                                <option selected value=0>Global</option>
+                                                <option value=1>China</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <select hidden id="meeting_lang" class="sdk-select">
+                                                <option selected value="en-US">English</option>
+                                            </select>
+                                        </div>
+                    
+                                        <input type="hidden" value="" id="copy_link_value" />
+                                        <button type="submit" class="btn btn-primary" id="join_meeting">Join</button>
+                                        <button type="submit" class="btn btn-primary" id="clear_all">Clear</button>
+                                        <button type="button" link="" onclick="window.copyJoinLink('#copy_join_link')"
+                                            class="btn btn-primary" id="copy_join_link">Copy Direct join link</button>
+                    
+                    
+                                    </form>
+                                </div>
                                 <p class="mt-3 mb-0">
                                 <br>
                                 <center><a class="text-primary" href="../">Back to home page</a></center>
