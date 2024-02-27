@@ -25,12 +25,12 @@ function websdkready() {
   var CLIENT_SECRET = "S7KYTV2C3l6Bfb6zESWigrjrosNgpBYy";
 
   // some help code, remember mn, pwd, lang to cookie, and autofill.
-  document.getElementById("display_name").value =
-    "CDN" +
-    ZoomMtg.getWebSDKVersion()[0] +
-    testTool.detectOS() +
-    "#" +
-    testTool.getBrowserInfo();
+  // document.getElementById("display_name").value =
+  //   "CDN" +
+  //   ZoomMtg.getWebSDKVersion()[0] +
+  //   testTool.detectOS() +
+  //   "#" +
+  //   testTool.getBrowserInfo();
   document.getElementById("meeting_number").value =
     testTool.getCookie("meeting_number");
   document.getElementById("meeting_pwd").value =
@@ -77,7 +77,6 @@ function websdkready() {
     document.getElementById("meeting_number").value = "";
     document.getElementById("meeting_pwd").value = "";
     document.getElementById("meeting_lang").value = "en-US";
-    document.getElementById("meeting_role").value = 0;
     window.location.href = "/index.html";
   });
 
@@ -99,7 +98,7 @@ function websdkready() {
         meetingNumber: meetingConfig.mn,
         sdkKey: CLIENT_ID,
         sdkSecret: CLIENT_SECRET,
-        role: meetingConfig.role,
+        role: 0,
         success: function (res) {
           console.log(res);
           meetingConfig.signature = res;
