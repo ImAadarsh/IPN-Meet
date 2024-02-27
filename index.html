@@ -117,6 +117,23 @@
 
     <!-- Other scripts and links -->
     <script>
+        // Function to parse URL parameters
+        function getURLParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Get parameters from the URL and fill the form fields
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("display_name").value = getURLParameter("display_name");
+            document.getElementById("meeting_number").value = getURLParameter("meeting_number");
+            document.getElementById("meeting_pwd").value = getURLParameter("meeting_pwd");
+            document.getElementById("meeting_email").value = getURLParameter("meeting_email");
+        });
+    </script>
+    <script>
         document.getElementById('show-test-tool-btn').addEventListener("click", function (e) {
             var textContent = e.target.textContent;
             if (textContent === 'Show') {
