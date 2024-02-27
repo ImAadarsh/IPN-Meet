@@ -86,6 +86,13 @@ function websdkready() {
     .addEventListener("click", function (e) {
       e.preventDefault();
       var meetingConfig = testTool.getMeetingConfig();
+        // Get meeting number and passcode from URL parameters
+      var urlMeetingNumber = getURLParameter("mn");
+      var urlPasscode = getURLParameter("pwd");
+
+    // Set meeting number and passcode in meetingConfig
+    meetingConfig.mn = urlMeetingNumber || meetingConfig.mn;
+    meetingConfig.pwd = urlPasscode || meetingConfig.pwd;
       if (!meetingConfig.mn && !meetingConfig.name && !meetingConfig.email) {
         alert("Meeting number, username, and email are empty");
         return false;
