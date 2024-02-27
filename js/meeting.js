@@ -43,9 +43,9 @@ function websdkready() {
   };
 
   // a tool use debug mobile device
-  if (testTool.isMobileDevice()) {
-    vConsole = new VConsole();
-  }
+  // if (testTool.isMobileDevice()) {
+  //   vConsole = new VConsole();
+  // }
   console.log(JSON.stringify(ZoomMtg.checkSystemRequirements()));
 
   // it's option if you want to change the MeetingSDK-Web dependency link resources. setZoomJSLib must be run at first
