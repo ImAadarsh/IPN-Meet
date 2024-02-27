@@ -86,10 +86,29 @@ function websdkready() {
     .addEventListener("click", function (e) {
       e.preventDefault();
       var meetingConfig = testTool.getMeetingConfig();
-      if (!meetingConfig.mn || !meetingConfig.name) {
-        alert("Meeting number or username is empty");
+      if (!meetingConfig.mn && !meetingConfig.name && !meetingConfig.email) {
+        alert("Meeting number, username, and email are empty");
         return false;
-      }
+    } else if (!meetingConfig.mn && !meetingConfig.name) {
+        alert("Meeting number and username are empty");
+        return false;
+    } else if (!meetingConfig.mn && !meetingConfig.email) {
+        alert("Meeting number and email are empty");
+        return false;
+    } else if (!meetingConfig.name && !meetingConfig.email) {
+        alert("Username and email are empty");
+        return false;
+    } else if (!meetingConfig.mn) {
+        alert("Meeting number is empty");
+        return false;
+    } else if (!meetingConfig.name) {
+        alert("Username is empty");
+        return false;
+    } else if (!meetingConfig.email) {
+        alert("Email is empty");
+        return false;
+    }
+    
 
       testTool.setCookie("meeting_number", meetingConfig.mn);
       testTool.setCookie("meeting_pwd", meetingConfig.pwd);
