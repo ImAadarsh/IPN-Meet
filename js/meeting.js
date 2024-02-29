@@ -29,11 +29,13 @@ function websdkready() {
     })(),
     passWord: tmpArgs.pwd,
     leaveUrl: "/index.html",
-    role: parseInt(tmpArgs.role, 10),
+    role: 0,
     userEmail: (function () {
       try {
+        console.log(testTool.b64DecodeUnicode(tmpArgs.email));
         return testTool.b64DecodeUnicode(tmpArgs.email);
       } catch (e) {
+        console.log(tmpArgs.email);
         return tmpArgs.email;
       }
     })(),
