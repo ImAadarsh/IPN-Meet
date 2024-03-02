@@ -2,8 +2,27 @@ window.addEventListener("DOMContentLoaded", function (event) {
   console.log("DOM fully loaded and parsed");
   websdkready();
 });
+async function sendZoomUserMappingRequest(formData) {
+  try {
+      const response = await fetch("http://127.0.0.1:8000/api/mapZoomUser", {
+          method: "POST",
+          body: formData,
+      });
+
+      if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const apiResponse = await response.json();
+      console.log(apiResponse);
+      // Further code handling the API response if needed
+  } catch (error) {
+      console.error("Error during fetch:", error);
+  }
+}
 
 function websdkready() {
+  
   var testTool = window.testTool;
   // get meeting args from url
   var tmpArgs = testTool.parseQuery();
@@ -84,6 +103,19 @@ function websdkready() {
             ZoomMtg.getCurrentUser({
               success: function (res) {
                 console.log("success getCurrentUser", res.result.currentUser);
+                var userId = res?.result?.currentUser?.userId || 'NA';
+                var userEmail = meetingConfig.userEmail;
+                var meetingId = meetingConfig.meetingNumber;
+            
+                // Creating a FormData object and appending necessary data
+                var formData = new FormData();
+                formData.append("user_id", userId);
+                formData.append("email", userEmail);
+                formData.append("meeting_id", meetingId);
+            
+                // Call the asynchronous function to send the request
+                sendZoomUserMappingRequest(formData);
+                console.log("We are HERE!");
               },
             });
           },
