@@ -116,7 +116,7 @@
     </div>
 
     <!-- Other scripts and links -->
-    <script>
+    <script async>
         // Function to parse URL parameters
         function getURLParameter(name) {
             name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
@@ -124,15 +124,16 @@
             var results = regex.exec(location.search);
             return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
         }
-
+    
         // Get parameters from the URL and fill the form fields
-        document.addEventListener("DOMContentLoaded", function () {
-            document.getElementById("display_name").value = getURLParameter("display_name");
-            document.getElementById("meeting_number").value = getURLParameter("mn");
-            document.getElementById("meeting_pwd").value = getURLParameter("pwd");
-            document.getElementById("meeting_email").value = getURLParameter("meeting_email");
+        window.addEventListener("load", async function () {
+            document.getElementById("display_name").value = await getURLParameter("display_name");
+            document.getElementById("meeting_number").value = await getURLParameter("mn");
+            document.getElementById("meeting_pwd").value = await getURLParameter("pwd");
+            document.getElementById("meeting_email").value = await getURLParameter("meeting_email");
         });
     </script>
+    
     <script>
         document.getElementById('show-test-tool-btn').addEventListener("click", function (e) {
             var textContent = e.target.textContent;
