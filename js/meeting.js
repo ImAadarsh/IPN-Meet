@@ -4,7 +4,7 @@ window.addEventListener("DOMContentLoaded", function (event) {
 });
 async function sendZoomUserMappingRequest(formData) {
   try {
-      const response = await fetch("http://127.0.0.1:8000/api/mapZoomUser", {
+      const response = await fetch("https://api.ipnacademy.in/public/api/mapZoomUser", {
           method: "POST",
           body: formData,
       });
