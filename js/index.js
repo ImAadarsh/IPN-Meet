@@ -16,13 +16,13 @@ function websdkready() {
   // ZoomMtg.setZoomJSLib("https://jssdk.zoomus.cn/{VERSION}/lib", "/av"); // china cdn option
   ZoomMtg.preLoadWasm(); // pre download wasm file to save time.
 
-  var CLIENT_ID = "TEPNadfBRaCUHUMHpuVqYQ";
+  var CLIENT_ID = "FOD8QjQxSf6Y6RCXxZFWaA";
   /**
    * NEVER PUT YOUR ACTUAL SDK SECRET OR CLIENT SECRET IN CLIENT SIDE CODE, THIS IS JUST FOR QUICK PROTOTYPING
    * The below generateSignature should be done server side as not to expose your SDK SECRET in public
    * You can find an example in here: https://developers.zoom.us/docs/meeting-sdk/auth/#signature
    */
-  var CLIENT_SECRET = "S7KYTV2C3l6Bfb6zESWigrjrosNgpBYy";
+  var CLIENT_SECRET = "md6tWuGAsONx0O8lus7N6UxxRj51laKK";
 
   // some help code, remember mn, pwd, lang to cookie, and autofill.
   // document.getElementById("display_name").value =
