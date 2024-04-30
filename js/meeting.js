@@ -86,8 +86,8 @@ function websdkready() {
       // disablePreview: false, // default false
       externalLinkPage: "./externalLinkPage.html",
       success: function () {
-        console.log(meetingConfig);
-        console.log("signature", signature);
+        // console.log(meetingConfig);
+        // console.log("signature", signature);
 
         ZoomMtg.join({
           meetingNumber: meetingConfig.meetingNumber,
@@ -98,20 +98,20 @@ function websdkready() {
           passWord: meetingConfig.passWord,
           success: function (res) {
             console.log("join meeting success");
-            console.log("get attendeelist");
-            ZoomMtg.getAttendeeslist({});
+            // console.log("get attendeelist");
+            // ZoomMtg.getAttendeeslist({});
             ZoomMtg.getCurrentUser({
               success: function (res) {
-                // console.log("success getCurrentUser", res.result.currentUser);
+                console.log("success getCurrentUser", res);
                 var userId = res?.result?.currentUser?.userId || 'NA';
                 var userEmail = meetingConfig.userEmail;
                 var meetingId = meetingConfig.meetingNumber;
-            
                 // Creating a FormData object and appending necessary data
                 var formData = new FormData();
                 formData.append("user_id", userId);
                 formData.append("email", userEmail);
                 formData.append("meeting_id", meetingId);
+                console.log(formData);
             
                 // Call the asynchronous function to send the request
                 sendZoomUserMappingRequest(formData);
@@ -130,7 +130,7 @@ function websdkready() {
     });
 
     ZoomMtg.inMeetingServiceListener("onUserJoin", function (data) {
-      // console.log("inMeetingServiceListener onUserJoin", data);
+      console.log("inMeetingServiceListener onUserJoin", data);
     });
 
     ZoomMtg.inMeetingServiceListener("onUserLeave", function (data) {
