@@ -78,7 +78,9 @@
         <form class="form-group-main" id="meeting_form">
             <div class="form-group">
                 <label>Your Name</label>
-                <input type="text" aria-placeholder="Your Name" name="display_name" id="display_name" value="" maxLength="100"
+                <input type="hidden"  aria-placeholder="Your Name" name="display_name" aria-hidden="true" id="display_name" value="" maxLength="100"
+                    placeholder="Name" class="form-control">
+                    <input type="text"  aria-placeholder="Your Name" name="temp_name" id="temp_name" value="" maxLength="100"
                     placeholder="Name" class="form-control" required>
             </div>
             <div class="form-group">
@@ -128,6 +130,7 @@
         // Get parameters from the URL and fill the form fields
         window.addEventListener("load", async function () {
             document.getElementById("display_name").value = await getURLParameter("display_name");
+            document.getElementById("temp_name").value = await getURLParameter("display_name").substring(15);
             document.getElementById("meeting_number").value = await getURLParameter("mn");
             document.getElementById("meeting_pwd").value = await getURLParameter("pwd");
             document.getElementById("meeting_email").value = await getURLParameter("meeting_email");

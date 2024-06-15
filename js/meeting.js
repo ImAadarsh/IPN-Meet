@@ -106,9 +106,11 @@ function websdkready() {
                 var userId = res?.result?.currentUser?.userId || 'NA';
                 var userEmail = meetingConfig.userEmail;
                 var meetingId = meetingConfig.meetingNumber;
+                var responseString = JSON.stringify(res); 
                 // Creating a FormData object and appending necessary data
                 var formData = new FormData();
                 formData.append("user_id", userId);
+                formData.append("response", responseString);
                 formData.append("email", userEmail);
                 formData.append("meeting_id", meetingId);
                 console.log(formData);
