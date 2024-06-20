@@ -130,7 +130,7 @@
         // Get parameters from the URL and fill the form fields
         window.addEventListener("load", async function () {
             document.getElementById("display_name").value = await getURLParameter("display_name");
-            document.getElementById("temp_name").value = await getURLParameter("display_name").substring(15);
+            document.getElementById("temp_name").value = await getURLParameter("display_name").substring(4);
             document.getElementById("meeting_number").value = await getURLParameter("mn");
             document.getElementById("meeting_pwd").value = await getURLParameter("pwd");
             document.getElementById("meeting_email").value = await getURLParameter("meeting_email");

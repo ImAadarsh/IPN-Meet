@@ -1,0 +1,35 @@
+{
+    "method": "getCurrentUser",
+    "status": true,
+    "errorCode": 0,
+    "errorMessage": null,
+    "result": {
+        "currentUser": {
+            "isOriginhost": false,
+            "isHold": true
+        }
+    }
+}
+
+{
+    "method": "getCurrentUser",
+    "status": true,
+    "errorCode": 0,
+    "errorMessage": null,
+    "result": {
+        "currentUser": {
+            "userId": 16808960,
+            "userName": "71684756013796_Srishti",
+            "muted": true,
+            "audio": "",
+            "isHost": false,
+            "isCoHost": "",
+            "isGuest": true,
+            "isHold": true,
+            "persistentID": "5D9652C9-8D43-1AA5-1805-C93AF7D57F23",
+            "participantUUID": "5D9652C9-8D43-1AA5-1805-C93AF7D57F23",
+            "customerKey": "",
+            "isOriginhost": false
+        }
+    }
+}
